@@ -1,0 +1,14 @@
+[Unit]
+Description=Custom bash script to set digital vibrance when CSGO is running or exited
+After=graphical.target
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+User=michohl
+ExecStart=/bin/bash /home/michohl/gitProjects/vibrantcs/vibrantcs.sh
+SyslogIdentifier=vibrantcs
+
+[Install]
+WantedBy=multi-user.target
