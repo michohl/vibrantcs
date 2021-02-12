@@ -29,7 +29,7 @@ HDMI-0
 DP-4
 ```
 
-Then pick whichever screen looks the most reasonable. and substitute that into the main script where I have `SCREEN` being set
+Then pick whichever screen looks the most reasonable. and substitute that into the main script where I have `DISPLAY` being set
 
 ## Systemd Service Installation
 
