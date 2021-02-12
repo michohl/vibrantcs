@@ -3,11 +3,12 @@
 PRIMARY_MONITOR="DP-0"
 DEFAULT_VIBRANCE=0
 CSGO_DESIRED_VIBRANCE=800
+DISPLAY="DP-0"
 
 # Wait for our baseline to come in for comparisons
 # This is important only if the server is enabled to start on boot
 until ! [ -z "$current_vibrance" ]; do
-    current_vibrance=$(nvidia-settings -c :0 --query [gpu:0]/DigitalVibrance[DP-0] | grep "DigitalVibrance" | head -n 1 | awk '{print $NF}' | cut -d '.' -f1)
+    current_vibrance=$(nvidia-settings -c :0 --query [gpu:0]/DigitalVibrance[${DISPLAY}] | grep "DigitalVibrance" | head -n 1 | awk '{print $NF}' | cut -d '.' -f1)
 done
 
 while true; do
